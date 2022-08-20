@@ -45,7 +45,7 @@ export default function App() {
           <li>{`<ul data-v-793feda9 data-v-5e7d565f class="Pc4Sp2ColumnThumbnailList col4List square">`}</li>
         </ul>
         <li>テキストボックスに張り付ける</li>
-        <li>解析開始ボタンを押す（※2回押さないと動かないときがある）</li>
+        <li>解析開始ボタンを押す</li>
         <li>
           レシピ一覧が出力されるので「ランダム取得」ボタンを押してレシピを取得する
         </li>

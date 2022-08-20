@@ -3,6 +3,7 @@ import { getRecipeInfo, recipeInfoArray } from "./ParserLib";
 
 const InputTextBox = ({
   setRecipeInfos,
+  setRandomNum,
   setRandomRecipe,
   setIsRandomRecipeGotten
 }) => {
@@ -28,6 +29,7 @@ const InputTextBox = ({
         url: recipeInfoArray[randomNum].url
       };
 
+      setRandomNum(randomNum);
       setRandomRecipe(recipeInfo);
       setIsRandomRecipeGotten(true);
     }
@@ -35,11 +37,7 @@ const InputTextBox = ({
 
   return (
     <div className="input-text-box">
-      <textarea
-        cols="50"
-        rows="5"
-        onChange={(e) => setText(e.currentTarget.value)}
-      />
+      <textarea cols="50" rows="5" onChange={(e) => setText(e.currentTarget.value)} />
       <p>
         <button onClick={startParse}>解析開始</button>　
         <button onClick={getRandomRecipe}>ランダム取得</button>

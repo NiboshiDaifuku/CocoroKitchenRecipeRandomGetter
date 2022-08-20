@@ -1,4 +1,4 @@
-const RandomRecipe = ({ isRandomRecipeGotten, randomRecipe }) => {
+const RandomRecipe = ({ isRandomRecipeGotten, randomNum, randomRecipe }) => {
   return (
     <>
       {isRandomRecipeGotten && (
@@ -9,6 +9,7 @@ const RandomRecipe = ({ isRandomRecipeGotten, randomRecipe }) => {
             <thead align="center">
               <tr>
                 <th>サムネイル</th>
+                <th>ID</th>
                 <th>レシピ名</th>
               </tr>
             </thead>
@@ -17,6 +18,7 @@ const RandomRecipe = ({ isRandomRecipeGotten, randomRecipe }) => {
                 <td>
                   <img src={randomRecipe.thumbnail} alt="" width="80" />
                 </td>
+                <td>{randomNum}</td>
                 <td>
                   <a href={randomRecipe.url}>{randomRecipe.name}</a>
                 </td>

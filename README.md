@@ -1,2 +1,2 @@
-# CocoroKitchenRecipeRandomGetter
+# YouTubeChannelInfoGetter
 Created with CodeSandbox

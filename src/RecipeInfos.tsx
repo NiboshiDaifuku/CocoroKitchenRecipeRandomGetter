@@ -6,16 +6,19 @@ const RecipeInfos = ({ recipeInfos }) => {
   ));
 
   return (
-    <table border="1">
-      <thead align="center">
-        <tr>
-          <th>サムネイル</th>
-          <th>ID</th>
-          <th>レシピ名</th>
-        </tr>
-      </thead>
-      <tbody>{info}</tbody>
-    </table>
+    <>
+      <hr />
+      <table border="1">
+        <thead align="center">
+          <tr>
+            <th>サムネイル</th>
+            <th>ID</th>
+            <th>レシピ名</th>
+          </tr>
+        </thead>
+        <tbody>{info}</tbody>
+      </table>
+    </>
   );
 };
 

@@ -2,35 +2,34 @@ import { useState } from "react";
 import { getRecipeInfo, recipeInfoArray } from "../lib/ParserLib";
 
 const InputTextBox = ({
+  recipeInfos,
   setRecipeInfos,
   setRandomNum,
   setRandomRecipe,
   setIsRandomRecipeGotten
 }) => {
   const [inputText, setText] = useState("");
-  const [recipeInfoArray, setRecipeInfoArray] = useState([]);
 
   const startParse = () => {
     if (inputText !== "") {
       const tmpRecipeInfoArray = getRecipeInfo(inputText);
-      setRecipeInfoArray(tmpRecipeInfoArray);
       setRecipeInfos(tmpRecipeInfoArray);
     }
   };
 
   // レシピをランダムに取得する
   const getRandomRecipe = () => {
-    const recipeNum = recipeInfoArray.length;
+    const recipeNum = recipeInfos?.length;
     if (recipeNum > 0) {
       const randomNum = Math.floor(Math.random() * recipeNum);
-      const recipeInfo: recipeInfoArray = {
-        thumbnail: recipeInfoArray[randomNum].thumbnail,
-        name: recipeInfoArray[randomNum].name,
-        url: recipeInfoArray[randomNum].url
+      const randomRecipeInfo: recipeInfoArray = {
+        thumbnail: recipeInfos[randomNum].thumbnail,
+        name: recipeInfos[randomNum].name,
+        url: recipeInfos[randomNum].url
       };
 
       setRandomNum(randomNum);
-      setRandomRecipe(recipeInfo);
+      setRandomRecipe(randomRecipeInfo);
       setIsRandomRecipeGotten(true);
     }
   };

@@ -2,7 +2,7 @@ const RandomRecipe = ({ isRandomRecipeGotten, randomNum, randomRecipe }) => {
   return (
     <>
       {isRandomRecipeGotten && (
-        <>
+        <div className="random-recipe">
           <hr />
           <h2>取得結果</h2>
           <table border="1">
@@ -25,7 +25,7 @@ const RandomRecipe = ({ isRandomRecipeGotten, randomNum, randomRecipe }) => {
               </tr>
             </tbody>
           </table>
-        </>
+        </div>
       )}
     </>
   );

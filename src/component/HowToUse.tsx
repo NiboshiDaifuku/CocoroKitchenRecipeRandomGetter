@@ -1,6 +1,6 @@
 const HowToUse = () => {
   return (
-    <>
+    <div className="how-to-use">
       <hr />
       <h2>使い方（PC）</h2>
       <ol>
@@ -21,7 +21,7 @@ const HowToUse = () => {
         <li>解析開始ボタンを押す</li>
         <li>レシピ一覧が出力されるので「ランダム取得」ボタンを押してレシピを取得する</li>
       </ol>
-    </>
+    </div>
   );
 };
 

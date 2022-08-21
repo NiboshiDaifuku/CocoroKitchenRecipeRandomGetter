@@ -1,12 +1,14 @@
 import RecipeInfo from "./RecipeInfo";
 
 const RecipeInfos = ({ recipeInfos }) => {
-  const info = recipeInfos.map((e, idx) => (
-    <RecipeInfo key={e.url} thumbnail={e.thumbnail} name={e.name} url={e.url} id={idx} />
-  ));
-
+  let info = [];
+  if (recipeInfos !== null) {
+    info = recipeInfos.map((e, idx) => (
+      <RecipeInfo key={e.url} thumbnail={e.thumbnail} name={e.name} url={e.url} id={idx} />
+    ));
+  }
   return (
-    <>
+    <div className="recipe-infos">
       <hr />
       <table border="1">
         <thead align="center">
@@ -18,7 +20,7 @@ const RecipeInfos = ({ recipeInfos }) => {
         </thead>
         <tbody>{info}</tbody>
       </table>
-    </>
+    </div>
   );
 };
 

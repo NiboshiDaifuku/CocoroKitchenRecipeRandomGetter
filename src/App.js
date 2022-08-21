@@ -12,7 +12,7 @@ export default function App() {
   const [randomRecipe, setRandomRecipe] = useState([]);
   const [isRandomRecipeGotten, setIsRandomRecipeGotten] = useState(false);
 
-  // ページ読み込み時にLocalStorageにレシピ一覧が残っていれば反映する
+  // ページ読み込み時にLocalStorageにレシピ一覧があれば反映する
   useEffect(() => {
     const cache = getRecipeCacheFromLocalStorage();
     if (cache !== "") {
@@ -30,6 +30,7 @@ export default function App() {
       <h1>COCORO KITCHEN レシピランダム取得ツール</h1>
       <h3>SHARPのレシピサイト「COCORO KITCHEN」からランダムにレシピを取得できます</h3>
       <InputTextBox
+        recipeInfos={recipeInfos}
         setRecipeInfos={setRecipeInfos}
         setRandomNum={setRandomNum}
         setRandomRecipe={setRandomRecipe}

@@ -7,6 +7,7 @@ import { getRecipeCacheFromLocalStorage, setRecipeCacheToLocalStorage } from "./
 import "./App.css";
 
 export default function App() {
+  const appVer = "v1.0";
   const [recipeInfos, setRecipeInfos] = useState([]);
   const [randomNum, setRandomNum] = useState(0);
   const [randomRecipe, setRandomRecipe] = useState([]);
@@ -27,7 +28,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>COCORO KITCHEN レシピランダム取得ツール</h1>
+      <h1>COCORO KITCHEN レシピランダム取得ツール（{appVer}）</h1>
       <h3>SHARPのレシピサイト「COCORO KITCHEN」からランダムにレシピを取得できます</h3>
       <InputTextBox
         recipeInfos={recipeInfos}

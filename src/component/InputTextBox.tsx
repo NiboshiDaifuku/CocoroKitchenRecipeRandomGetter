@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getRecipeInfo, recipeInfoArray } from "./ParserLib";
+import { getRecipeInfo, recipeInfoArray } from "../lib/ParserLib";
 
 const InputTextBox = ({
   setRecipeInfos,

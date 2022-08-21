@@ -1,9 +1,9 @@
 import { useState } from "react";
-import InputTextBox from "./InputTextBox";
-import RandomRecipe from "./RandomRecipe";
-import HowToUse from "./HowToUse";
-import RecipeInfos from "./RecipeInfos";
-import "./styles.css";
+import InputTextBox from "./component/InputTextBox";
+import RandomRecipe from "./component/RandomRecipe";
+import HowToUse from "./component/HowToUse";
+import RecipeInfos from "./component/RecipeInfos";
+import "./App.css";
 
 export default function App() {
   const [recipeInfos, setRecipeInfos] = useState([]);

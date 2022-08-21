@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InputTextBox from "./component/InputTextBox";
 import RandomRecipe from "./component/RandomRecipe";
 import HowToUse from "./component/HowToUse";
 import RecipeInfos from "./component/RecipeInfos";
+import { getRecipeCacheFromLocalStorage, setRecipeCacheToLocalStorage } from "./lib/DatabaseLib";
 import "./App.css";
 
 export default function App() {
@@ -10,6 +11,19 @@ export default function App() {
   const [randomNum, setRandomNum] = useState(0);
   const [randomRecipe, setRandomRecipe] = useState([]);
   const [isRandomRecipeGotten, setIsRandomRecipeGotten] = useState(false);
+
+  // ページ読み込み時にLocalStorageにレシピ一覧が残っていれば反映する
+  useEffect(() => {
+    const cache = getRecipeCacheFromLocalStorage();
+    if (cache !== "") {
+      setRecipeInfos(cache);
+    }
+  }, []);
+
+  // レシピ一覧がセットされたら、LocalStorageに保存する
+  useEffect(() => {
+    setRecipeCacheToLocalStorage(recipeInfos);
+  }, [recipeInfos]);
 
   return (
     <div className="App">
